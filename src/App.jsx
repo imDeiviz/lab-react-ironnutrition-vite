@@ -22,12 +22,22 @@ function App() {
   ));
 
   return (
-    <div className="App">
-      <h1>LAB | React IronNutrition</h1>
+    <div className="container mt-5">
+      <div className="row mb-4">
+        <div className="col">
+          <h1 className="text-center display-4">IronNutrition</h1>
+        </div>
+      </div>
 
-      <AddFoodForm onAddFood={onAddFood} />
+      <div className="row mb-5">
+        <div className="col-md-6 offset-md-3">
+          <AddFoodForm onAddFood={onAddFood} />
+        </div>
+      </div>
 
-      {foodBoxes}
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        {foodBoxes}
+      </div>
     </div>
   );
 }

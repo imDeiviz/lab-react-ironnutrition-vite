@@ -30,21 +30,34 @@ function AddFoodForm({ onAddFood }) {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      {JSON.stringify(data)}
-
-      <div>
-        <label htmlFor="name">Name</label>
-        <input id="name" name="name" value={data.name} onChange={onChange} />
+    <form onSubmit={onSubmit} className="border p-4 rounded shadow">
+      <div className="mb-3">
+        <label htmlFor="name" className="form-label">Name</label>
+        <input 
+          id="name" 
+          name="name" 
+          value={data.name} 
+          onChange={onChange}
+          className="form-control"
+          required
+        />
       </div>
 
-      <div>
-        <label htmlFor="image">Image</label>
-        <input id="image" name="image" value={data.image} onChange={onChange} />
+      <div className="mb-3">
+        <label htmlFor="image" className="form-label">Image URL</label>
+        <input 
+          id="image" 
+          name="image" 
+          value={data.image} 
+          onChange={onChange}
+          className="form-control"
+          type="url"
+          required
+        />
       </div>
 
-      <div>
-        <label htmlFor="calories">Calories</label>
+      <div className="mb-3">
+        <label htmlFor="calories" className="form-label">Calories</label>
         <input
           type="number"
           min="0"
@@ -52,11 +65,13 @@ function AddFoodForm({ onAddFood }) {
           name="calories"
           value={data.calories}
           onChange={onChange}
+          className="form-control"
+          required
         />
       </div>
 
-      <div>
-        <label htmlFor="servings">Servings</label>
+      <div className="mb-3">
+        <label htmlFor="servings" className="form-label">Servings</label>
         <input
           type="number"
           min="0"
@@ -64,10 +79,12 @@ function AddFoodForm({ onAddFood }) {
           name="servings"
           value={data.servings}
           onChange={onChange}
+          className="form-control"
+          required
         />
       </div>
 
-      <button type="submit">Create</button>
+      <button type="submit" className="btn btn-primary w-100">Add Food</button>
     </form>
   );
 }
